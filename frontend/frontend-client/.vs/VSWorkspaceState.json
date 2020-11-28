@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\alert-dialog",
+    "\\src\\app\\components\\create-record",
+    "\\src\\app\\components\\list-record",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\components\\alert-dialog\\alert-dialog.component.html",
+  "PreviewInSolutionExplorer": false
+}

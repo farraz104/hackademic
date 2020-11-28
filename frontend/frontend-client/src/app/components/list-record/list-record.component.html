@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de entradas</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Distancia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records | async">
+          <td>{{record.name}}</td>
+          <td>{{record.email}}</td>
+          <td>{{record.distance}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

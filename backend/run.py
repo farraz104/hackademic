@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow_sqlalchemy import ModelSchema
 from marshmallow import fields
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://records:b0cb8878@db4free.net:3306/aplicabeca'
 db = SQLAlchemy(app)
 
@@ -35,13 +38,15 @@ class RecordSchema(ModelSchema):
     distance = fields.Number(required=True)
 
 @app.route('/historial', methods = ['GET'])
+@cross_origin()
 def index():
     get_records = Record.query.all()
     record_schema = RecordSchema(many=True)
     records = record_schema.dump(get_records)
-    return make_response(jsonify({"historial": records}))
+    return make_response(jsonify( records))
 
 @app.route('/registro', methods = ['POST'])
+@cross_origin()
 def create_record():
     data = request.get_json()
     if data.get('distance')>4 :

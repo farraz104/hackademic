@@ -1,0 +1,21 @@
+<h3>Crear Entrada</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre </label>
+      <input type="text" class="form-control" id="nombre" required [(ngModel)]="record.name" name="nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Emai </label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="record.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Distancia </label>
+      <input type="number" class="form-control" id="distance" required [(ngModel)]="record.distance" name="distance">
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar</button>
+  </form>
+</div>
